@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">GithubAPI-Search</string>
 
-    <string name="search_message" translatable="true">TemuKan User Git Favoritmu</string>
+    <string name="search_message" translatable="true">Temukan User Git Favoritmu</string>
     <string name="search_hint" translatable="true">Menacari Siapa?</string>
 
     <string name="username" translatable="true">Username</string>
@@ -16,4 +16,6 @@
     <string name="followers_not_found" translatable="true">%s Has No Followers</string>
     <string name="following_not_found" translatable="true">%s Does Not Follow Anyone</string>
     <string name="languages" translatable="true">Languages</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

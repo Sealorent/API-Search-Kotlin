@@ -59,22 +59,7 @@ class MainActivity : AppCompatActivity() ,ViewStateCallback<List<UserGit>> {
 
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.option_menu, menu)
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.menu_language -> {
-                val intent = Intent(Settings.ACTION_LOCALE_SETTINGS)
-                startActivity(intent)
-                true
-            }
-            else -> false
-        }
-    }
 
     override fun onSuccess(data: List<UserGit>) {
         userGitAdapter.setAllData(data)

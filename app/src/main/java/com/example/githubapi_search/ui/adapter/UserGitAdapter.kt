@@ -38,11 +38,10 @@ class UserGitAdapter: RecyclerView.Adapter<UserGitAdapter.UserGitViewHolder>() {
     inner class UserGitViewHolder(private val view: UserListBinding): RecyclerView.ViewHolder(view.root) {
 
         fun bind(user: UserGit) {
-
             view.apply {
                 name.text = user.username
-            }
 
+            }
             Glide.with(itemView.context)
                 .load(user.avatar)
                 .apply(RequestOptions.circleCropTransform())
