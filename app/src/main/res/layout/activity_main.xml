@@ -23,9 +23,9 @@
     </androidx.cardview.widget.CardView>
 
     <include
-        android:id="@+id/include_main_search"
+        android:id="@+id/include_pencarian"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/include_main_search"/>
+        layout="@layout/include_pencarian"/>
 
 </LinearLayout>

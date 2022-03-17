@@ -39,7 +39,7 @@ class UserGitAdapter: RecyclerView.Adapter<UserGitAdapter.UserGitViewHolder>() {
 
         fun bind(user: UserGit) {
             view.apply {
-                name.text = user.username
+                userName.text = user.username
 
             }
             Glide.with(itemView.context)

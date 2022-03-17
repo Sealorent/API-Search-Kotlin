@@ -22,7 +22,6 @@ class DetailViewModel: ViewModel() {
                 userGit.postValue(Resource.Success(result))
             }
             override fun onFailure(call: Call<UserGit>, t: Throwable) {
-
             }
         })
         return userGit

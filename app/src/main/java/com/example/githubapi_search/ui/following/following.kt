@@ -13,7 +13,6 @@ import com.example.githubapi_search.data.network.Resource
 import com.example.githubapi_search.databinding.FragmentFollowersBinding
 import com.example.githubapi_search.model.UserGit
 import com.example.githubapi_search.ui.adapter.UserGitAdapter
-import com.example.githubapi_search.ui.followers.followers
 import com.example.githubapi_search.util.ViewStateCallback
 
 class following : Fragment() , ViewStateCallback<List<UserGit>>{

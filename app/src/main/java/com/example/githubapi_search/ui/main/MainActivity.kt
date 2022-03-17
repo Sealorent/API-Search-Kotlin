@@ -1,11 +1,7 @@
 package com.example.githubapi_search.ui.main
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.Settings
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,7 +26,7 @@ class MainActivity : AppCompatActivity() ,ViewStateCallback<List<UserGit>> {
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         userGitAdapter = UserGitAdapter()
-        mainBinding.includeMainSearch.rvUserGit.apply {
+        mainBinding.includePencarian.rvUserGit.apply {
             adapter = userGitAdapter
             layoutManager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL  ,false)
         }
@@ -63,7 +59,7 @@ class MainActivity : AppCompatActivity() ,ViewStateCallback<List<UserGit>> {
 
     override fun onSuccess(data: List<UserGit>) {
         userGitAdapter.setAllData(data)
-        mainBinding.includeMainSearch.apply {
+        mainBinding.includePencarian.apply {
             ivSearchIcon.visibility = invisible
             tvMessage.visibility = invisible
             mainProgressBar.visibility = invisible
@@ -72,7 +68,7 @@ class MainActivity : AppCompatActivity() ,ViewStateCallback<List<UserGit>> {
     }
 
     override fun onLoading() {
-        mainBinding.includeMainSearch.apply {
+        mainBinding.includePencarian.apply {
             ivSearchIcon.visibility = invisible
             tvMessage.visibility = invisible
             mainProgressBar.visibility = visible
@@ -81,7 +77,7 @@ class MainActivity : AppCompatActivity() ,ViewStateCallback<List<UserGit>> {
     }
 
     override fun onFailed(message: String?) {
-        mainBinding.includeMainSearch.apply {
+        mainBinding.includePencarian.apply {
             //User yang dicari tidak ditemukan
             if (message == null) {
                 ivSearchIcon.apply {

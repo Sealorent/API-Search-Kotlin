@@ -60,12 +60,13 @@ class DetailActivity : AppCompatActivity() , ViewStateCallback<UserGit?> {
 
     override fun onSuccess(data: UserGit?) {
         detailBinding.apply {
-            tvDetailNumberOfRepos.text = data?.repository.toString()
-            tvDetailNumberOfFollowers.text = data?.follower.toString()
-            tvDetailNumberOfFollowing.text = data?.following.toString()
-            tvDetailName.text = data?.name
-            tvDetailCompany.text = data?.company
-            tvDetailLocation.text = data?.location
+            detailProgressBar.visibility = invisible
+            userTotalRepo.text = data?.repository.toString()
+            userTotalFollowers.text = data?.follower.toString()
+            userTotalFollowing.text = data?.following.toString()
+            userName.text = data?.name
+            userCompany.text = data?.company
+            userLocation.text = data?.location
 
             Glide.with(this@DetailActivity)
                 .load(data?.avatar)
@@ -77,11 +78,22 @@ class DetailActivity : AppCompatActivity() , ViewStateCallback<UserGit?> {
     }
 
     override fun onLoading() {
-
+        detailBinding.apply {
+            detailProgressBar.visibility = visible
+            userName.visibility = invisible
+            userCompany.visibility = invisible
+            userLocation.visibility = invisible
+            userFollowing.visibility = invisible
+            userTotalFollowing.visibility = invisible
+            userRepo.visibility = invisible
+            userTotalRepo.visibility = invisible
+            userFollowers.visibility = invisible
+            userTotalFollowers.visibility = invisible
+            userImage.visibility =invisible
+        }
     }
 
     override fun onFailed(message: String?) {
-
     }
 }
 

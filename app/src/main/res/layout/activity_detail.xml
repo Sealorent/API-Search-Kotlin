@@ -16,6 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/view_pager"/>
 
+    <ProgressBar
+        android:id="@+id/detail_progress_bar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="30dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/userRepo"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
     <ImageView
         android:id="@+id/userImage"
         android:layout_width="90dp"
@@ -27,9 +39,8 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/github"/>
 
-    <!-- Detail Configurations-->
     <TextView
-        android:id="@+id/tv_detail_name"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
@@ -42,36 +53,29 @@
         app:layout_constraintTop_toTopOf="@id/userImage"
         tools:text="@string/name" />
 
-
     <TextView
-        android:id="@+id/tv_detail_company"
+        android:id="@+id/userCompany"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail_name"
-        app:layout_constraintStart_toStartOf="@id/tv_detail_name"
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        app:layout_constraintStart_toStartOf="@id/userName"
         tools:text="@string/company"/>
 
     <TextView
-        android:id="@+id/tv_detail_location"
+        android:id="@+id/userLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:layout_marginTop="4dp"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@id/tv_detail_company"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail_company"
+        app:layout_constraintStart_toStartOf="@id/userCompany"
+        app:layout_constraintTop_toBottomOf="@id/userCompany"
         tools:text="@string/location" />
-    <!-- End Detail Configurations-->
-
-
-    <!-- Followers Configurations-->
-
-
 
     <TextView
-        android:id="@+id/tv_detail_repos"
+        android:id="@+id/userRepo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -81,24 +85,24 @@
         android:textColor="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail_numberOfRepos" />
+        app:layout_constraintTop_toBottomOf="@id/userTotalRepo" />
 
     <TextView
-        android:id="@+id/tv_detail_numberOfRepos"
+        android:id="@+id/userTotalRepo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/tv_detail_repos"
+        app:layout_constraintEnd_toEndOf="@id/userRepo"
         app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="@id/tv_detail_repos"
+        app:layout_constraintStart_toStartOf="@id/userRepo"
         app:layout_constraintTop_toBottomOf="@id/userImage"
         tools:text="0" />
 
     <TextView
-        android:id="@+id/tv_detail_followers"
+        android:id="@+id/userFollowers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -108,11 +112,11 @@
         android:textColor="@android:color/black"
 
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@id/tv_detail_repos"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail_numberOfFollowers" />
+        app:layout_constraintStart_toEndOf="@id/userRepo"
+        app:layout_constraintTop_toBottomOf="@id/userTotalFollowers" />
 
     <TextView
-        android:id="@+id/tv_detail_numberOfFollowers"
+        android:id="@+id/userTotalFollowers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
@@ -120,14 +124,12 @@
         android:textSize="20sp"
         android:fontFamily="sans-serif-condensed"
         tools:text="1"
-        app:layout_constraintTop_toTopOf="@id/tv_detail_numberOfRepos"
-        app:layout_constraintStart_toStartOf="@id/tv_detail_followers"
-        app:layout_constraintEnd_toEndOf="@id/tv_detail_followers"/>
-    <!-- Followers Configurations End-->
+        app:layout_constraintTop_toTopOf="@id/userTotalRepo"
+        app:layout_constraintStart_toStartOf="@id/userFollowers"
+        app:layout_constraintEnd_toEndOf="@id/userFollowers"/>
 
-    <!-- Following Configurations-->
     <TextView
-        android:id="@+id/tv_detail_following"
+        android:id="@+id/userFollowing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -137,25 +139,20 @@
         android:textColor="@android:color/black"
         android:textSize="14sp"
         android:fontFamily="sans-serif-condensed"
-        app:layout_constraintStart_toEndOf="@id/tv_detail_followers"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail_numberOfFollowing"/>
+        app:layout_constraintStart_toEndOf="@id/userFollowers"
+        app:layout_constraintTop_toBottomOf="@id/userTotalFollowing"/>
 
     <TextView
-        android:id="@+id/tv_detail_numberOfFollowing"
+        android:id="@+id/userTotalFollowing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/tv_detail_following"
-        app:layout_constraintStart_toStartOf="@id/tv_detail_following"
-        app:layout_constraintTop_toTopOf="@id/tv_detail_numberOfFollowers"
+        app:layout_constraintEnd_toEndOf="@id/userFollowing"
+        app:layout_constraintStart_toStartOf="@id/userFollowing"
+        app:layout_constraintTop_toTopOf="@id/userTotalFollowers"
         tools:text="2" />
-
-
-    <!-- Following Configurations End-->
-
-
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
@@ -164,7 +161,7 @@
         android:layout_marginTop="30dp"
         app:tabIndicatorColor="@color/grey"
         app:tabSelectedTextColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/tv_detail_repos"
+        app:layout_constraintTop_toBottomOf="@id/userRepo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
